@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #Gateway开启服务注册和发现的功能，并且Spring Cloud Gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
+          lower-case-service-id: true
+      routes:
+        - id: jd_route
+          uri: https://www.jd.com/
+          predicates:
+            - Path=/jd
+        - id: bd_route
+          uri: https://www.baidu.com/
+          predicates:
+            - Path=/bd
+
+
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5      # 心跳时间，即服务续约间隔时间（缺省为30s）
+    lease-expiration-duration-in-seconds: 5  # 发呆时间，即服务续约到期时间（缺省为90s）
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:7001}/eureka/
+      #defaultZone: http://localhost:7001/eureka/
+    registry-fetch-interval-seconds: 10
+    healthcheck:
+      enabled: true
+
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

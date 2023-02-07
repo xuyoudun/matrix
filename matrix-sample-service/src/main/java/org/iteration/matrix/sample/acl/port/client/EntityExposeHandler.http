@@ -1,0 +1,59 @@
+###
+POST http://localhost:8080/entity/view/sup_vendor/query
+Content-Type: application/json
+Cache-Control: no-cache
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJQk0gUklTSy1NRUFTVVJFTUVOVCBURUFNIiwiYXVkIjoiMSIsIm5iZiI6MTY2MjI1NDUyNCwiaXNzIjoiUldBIiwiZXhwIjoxNjYyMjk3NzI0LCJ1c2VyTmFtZSI6ImFkbWluIiwiaWF0IjoxNjYyMjU0NTI0LCJqdGkiOiIxY2JiMWQ4ZS1mYTlhLTQwY2ItOTY2MS1lZTk3MmQyMGEwNzcifQ.AzPhNJ7r9jdSPjMgOV6lwJJgB1zS8VfbjpBas-KUyGZ-grJmUX4v3gvxMF4Skv3TPiUnIjuuc6dPWX4TtytuWg
+
+###
+POST http://localhost:8080/entity/view/sup_vendor/config
+Content-Type: application/json
+Cache-Control: no-cache
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJQk0gUklTSy1NRUFTVVJFTUVOVCBURUFNIiwiYXVkIjoiMSIsIm5iZiI6MTY2MjI1NDUyNCwiaXNzIjoiUldBIiwiZXhwIjoxNjYyMjk3NzI0LCJ1c2VyTmFtZSI6ImFkbWluIiwiaWF0IjoxNjYyMjU0NTI0LCJqdGkiOiIxY2JiMWQ4ZS1mYTlhLTQwY2ItOTY2MS1lZTk3MmQyMGEwNzcifQ.AzPhNJ7r9jdSPjMgOV6lwJJgB1zS8VfbjpBas-KUyGZ-grJmUX4v3gvxMF4Skv3TPiUnIjuuc6dPWX4TtytuWg
+
+
+###
+POST http://localhost:8080/entity/sup_vendor/data?pageSize=1
+Content-Type: application/json
+Cache-Control: no-cache
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJQk0gUklTSy1NRUFTVVJFTUVOVCBURUFNIiwiYXVkIjoiMSIsIm5iZiI6MTY2MjI1NDUyNCwiaXNzIjoiUldBIiwiZXhwIjoxNjYyMjk3NzI0LCJ1c2VyTmFtZSI6ImFkbWluIiwiaWF0IjoxNjYyMjU0NTI0LCJqdGkiOiIxY2JiMWQ4ZS1mYTlhLTQwY2ItOTY2MS1lZTk3MmQyMGEwNzcifQ.AzPhNJ7r9jdSPjMgOV6lwJJgB1zS8VfbjpBas-KUyGZ-grJmUX4v3gvxMF4Skv3TPiUnIjuuc6dPWX4TtytuWg
+
+{
+  "vendor_code": "GF20190000001341",
+  "name": "福建警声",
+  "country": null,
+  "country_name": null,
+  "province": null,
+  "number3": null,
+  "province_name": null
+}
+
+###
+POST http://localhost:8080/entity/view/sup_vendor/edit
+Content-Type: application/json
+Cache-Control: no-cache
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJQk0gUklTSy1NRUFTVVJFTUVOVCBURUFNIiwiYXVkIjoiMSIsIm5iZiI6MTY2MjI1NDUyNCwiaXNzIjoiUldBIiwiZXhwIjoxNjYyMjk3NzI0LCJ1c2VyTmFtZSI6ImFkbWluIiwiaWF0IjoxNjYyMjU0NTI0LCJqdGkiOiIxY2JiMWQ4ZS1mYTlhLTQwY2ItOTY2MS1lZTk3MmQyMGEwNzcifQ.AzPhNJ7r9jdSPjMgOV6lwJJgB1zS8VfbjpBas-KUyGZ-grJmUX4v3gvxMF4Skv3TPiUnIjuuc6dPWX4TtytuWg
+
+{
+  "id": 6
+}
+
+###
+POST http://localhost:8080/entity/sup_vendor/edit
+Content-Type: application/json
+Cache-Control: no-cache
+token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJQk0gUklTSy1NRUFTVVJFTUVOVCBURUFNIiwiYXVkIjoiMSIsIm5iZiI6MTY2MjI1NDUyNCwiaXNzIjoiUldBIiwiZXhwIjoxNjYyMjk3NzI0LCJ1c2VyTmFtZSI6ImFkbWluIiwiaWF0IjoxNjYyMjU0NTI0LCJqdGkiOiIxY2JiMWQ4ZS1mYTlhLTQwY2ItOTY2MS1lZTk3MmQyMGEwNzcifQ.AzPhNJ7r9jdSPjMgOV6lwJJgB1zS8VfbjpBas-KUyGZ-grJmUX4v3gvxMF4Skv3TPiUnIjuuc6dPWX4TtytuWg
+
+{
+  "id": 6,
+  "vendor_code": "GF20190000001341",
+  "name": "福建警声建设发展集团有限公司-update",
+  "country": "CN",
+  "country_name": "中国-update",
+  "province": "350000",
+  "province_name": "福建省-update",
+  "city": "350100",
+  "city_name": "福州市-update",
+  "address": "福州市台江区广达路68号金源大广场西区21层L单元-update",
+  "is_independent_legal": 1,
+  "parent_vendor_code": ""
+}

@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.iteration.matrix.core.config.MatrixAutoConfiguration

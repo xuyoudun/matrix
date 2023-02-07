@@ -1,0 +1,107 @@
+server:
+  port: 8080
+  servlet:
+    context-path: 
+management:
+  server:
+    port: 8082
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  application:
+    name: matrix-sample-api
+  datasource:
+    url: jdbc:mysql://rm-wz94o7t14kjtpr4k7ho.mysql.rds.aliyuncs.com:3306/matrix-sample-dev?useServerPrepStmts=true&cachePrepStmts=true&prepStmtCacheSize=500&prepStmtCacheSqlLimit=2048&useLocalSessionState=true&useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: matrix
+    password: 9BfjVVd9uctOUcgC
+    hikari:
+      maxLifetime: 1765000 #一个连接的生命时长（毫秒），超时而且没被使用则被释放（retired），缺省:30分钟，建议设置比数据库超时时长少30秒以上
+      maximumPoolSize: 5 #连接池中允许的最大连接数。缺省值：10；推荐的公式：((core_count * 2) + effective_spindle_count)
+      validationTimeout: 3000
+      idleTimeout: 60000
+  jpa:
+    properties:
+      hibernate:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        show_sql: true
+        format_sql: true
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        hbm2ddl:
+          auto: none
+          dialect: org.hibernate.dialect.MySQLDialect
+#  redis:
+#    host: localhost
+#    port: 6379
+    #password: 1qaz
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ssZ
+    time-zone: Asia/Shanghai
+  http:
+    encoding:
+      enabled: true
+      charset: utf-8
+#  rabbitmq:
+#    host: rabbitmq.tencent-srm-dev
+#    port: 5672
+#    username: admin
+#    password: DSaYxQm#03TBqohP
+#    publisher-confirms: true
+
+
+#eureka:
+#  instance:
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#    # 以IP注册到注册中心
+#    preferIpAddress: true
+#    leaseRenewalIntervalInSeconds: 10  # 心跳时间，即服务续约间隔时间（缺省为30s）
+#    leaseExpirationDurationInSeconds: 30 # 发呆时间，即服务续约到期时间（缺省为90s）
+#    # 服务的一些元数据信息
+#    metadata-map:
+#      VERSION: 1.1.1.RELEASE
+#  client:
+#    serviceUrl:
+#      # 注册中心地址
+#      defaultZone: http://localhost:7001/eureka/
+#    registryFetchIntervalSeconds: 10
+#    healthcheck:
+#      enabled: true
+
+#hystrix:
+#  threadpool:
+#    default:
+#      # 执行命令线程池的核心线程数，也是命令执行的最大并发量
+#      # 默认10
+#      coreSize: 1000
+#      # 最大执行线程数
+#      maximumSize: 1000
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE
+#          thread:
+#            # HystrixCommand 执行的超时时间，超时后进入降级处理逻辑。一个接口，理论的最佳响应速度应该在200ms以内，或者慢点的接口就几百毫秒。
+#            # 默认 1000 毫秒，最高设置 2000足矣。如果超时，首先看能不能优化接口相关业务、SQL查询等，不要盲目加大超时时间，否则会导致线程堆积过多，hystrix 线程池卡死，最终服务不可用。
+#            timeoutInMilliseconds: 40000
+#
+#feign:
+#  hystrix:
+#    enabled: true
+#
+#jwt:
+#  key: z8NL2N1ofHc5U43s
+#  ignored: health,prometheus,erp-contract
+#  enabled: true #是否开启 JWT 过滤，默认为开启，可以在本地开发的时候设置为 false，方便开发
+#
+#ribbon:
+#  # 客户端读取超时时间，超时时间要小于Hystrix的超时时间，否则重试机制就无意义了
+#  ReadTimeout: 30000
+#  # 客户端连接超时时间
+#  ConnectTimeout: 30000
+#  # 访问实例失败(超时)，允许自动重试，设置重试次数，失败后会更换实例访问，请一定确保接口的幂等性，否则重试可能导致数据异常。
+#  OkToRetryOnAllOperations: true
+#  MaxAutoRetries: 1
+#  MaxAutoRetriesNextServer: 1
